@@ -1,0 +1,17 @@
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\bin\Debug\net6.0-windows\Canny_Edge_Detector.exe
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\bin\Debug\net6.0-windows\Canny_Edge_Detector.deps.json
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\bin\Debug\net6.0-windows\Canny_Edge_Detector.runtimeconfig.json
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\bin\Debug\net6.0-windows\Canny_Edge_Detector.dll
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\bin\Debug\net6.0-windows\Canny_Edge_Detector.pdb
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.csproj.AssemblyReference.cache
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.Form1.resources
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.csproj.GenerateResource.cache
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.AssemblyInfoInputs.cache
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.AssemblyInfo.cs
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.csproj.CoreCompileInputs.cache
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.dll
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\refint\Canny_Edge_Detector.dll
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.pdb
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\Canny_Edge_Detector.genruntimeconfig.cache
+C:\Users\hieronim\Documents\GitHub\Canny_Edge_Detector\Canny_Edge_Detector\obj\Debug\net6.0-windows\ref\Canny_Edge_Detector.dll
