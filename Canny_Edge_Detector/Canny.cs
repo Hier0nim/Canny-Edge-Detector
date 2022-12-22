@@ -7,11 +7,23 @@ namespace Canny_Edge_Detector
 
     class Canny
     {
+        public DateTime dateTime1;
+        public DateTime dateTime2;
+        public DateTime dateTime3;
+        public DateTime dateTime4;
+        public DateTime dateTime5;
+        public DateTime dateTime6;
+        public DateTime dateTime7;
+        public DateTime dateTime8;
+
+
         private readonly Bitmap inputImage;
 
         private readonly int Height;
         private readonly int Width;
-        private readonly int threads;
+
+        List<Action> listOfActions;
+        ParallelOptions degreeOfParallelism;
 
         private int[,] greyImage;
         private int[,] gaussianFilteredImage;
@@ -45,12 +57,12 @@ namespace Canny_Edge_Detector
         private float highThreshold;
         private float lowThreshold;
 
-        public int[,] GaussianFilteredImage { get => gaussianFilteredImage;}
-        public int[,] EdgeMap { get => edgeMap;}
-        public float[,] Gradient { get => gradient;}
-        public float[,] NonMax { get => nonMax;}
-        public int[,] StrongEdges { get => strongEdges;}
-        public int[,] WeakEdges { get => weakEdges;}
+        public int[,] GaussianFilteredImage { get => gaussianFilteredImage; }
+        public int[,] EdgeMap { get => edgeMap; }
+        public float[,] Gradient { get => gradient; }
+        public float[,] NonMax { get => nonMax; }
+        public int[,] StrongEdges { get => strongEdges; }
+        public int[,] WeakEdges { get => weakEdges; }
 
         public Canny(Bitmap Input, float Th, float Tl, int threads)
         {
@@ -59,8 +71,8 @@ namespace Canny_Edge_Detector
 
             highThreshold = Th;
             lowThreshold = Tl;
-            this.threads = threads;
-
+            listOfActions = new List<Action>();
+            degreeOfParallelism = new ParallelOptions { MaxDegreeOfParallelism = threads };
             inputImage = Input;
             Height = inputImage.Height;
             Width = inputImage.Width;
@@ -96,7 +108,7 @@ namespace Canny_Edge_Detector
                         imagePointer1[2] = (byte)((int)(GreyImage[i, j]));
                         imagePointer1[3] = (byte)255;
                         imagePointer1 += 4;
-                    } 
+                    }
                     imagePointer1 += (bitmapData1.Stride - (bitmapData1.Width * 4));
                 }
             }
@@ -124,7 +136,7 @@ namespace Canny_Edge_Detector
                         imagePointer1[2] = (byte)GreyImage[i, j];
                         imagePointer1[3] = (byte)255;
                         imagePointer1 += 4;
-                    } 
+                    }
                     imagePointer1 += (bitmapData1.Stride - (bitmapData1.Width * 4));
                 }
             }
@@ -182,23 +194,29 @@ namespace Canny_Edge_Detector
                 {-1,-2,-1}
             };
 
-            
 
+            dateTime1 = DateTime.Now;
             //Apply gaussian blur: 4007
             GaussianFilterAsync();
+            dateTime2 = DateTime.Now;
             //Count derivative X and Y of the gaussian filtered image:2800
             ApplyFilterAsync(Dx, Dy);
+            dateTime3 = DateTime.Now;
             //Find the magnitude of the gradient 347
             GradientMagnitudeAsync();
+            dateTime4 = DateTime.Now;
             //Perform non max suppression based on gradient: 1659
             NonMaxSuppressionAsync();
+            dateTime5 = DateTime.Now;
             //Perform double thresholding based on highThreshold and lowThreshold : 522
-            DoubleThresholding();
+            DoubleThresholdingAsync();
+            dateTime6 = DateTime.Now;
             //Perform edge tracking by hysteresis: 1034
-            HysterisisThresholding();
+            HysterisisThresholdingAsync();
+            dateTime7 = DateTime.Now;
             //Normalize edge map to max values:
-            NormalizeEdgeMap();
-            
+            NormalizeEdgeMapAsync();
+            dateTime8 = DateTime.Now;
             return;
 
         }
@@ -208,7 +226,7 @@ namespace Canny_Edge_Detector
             int i;
             gaussianFilteredImage = greyImage;
             int Limit = kernelSize / 2;
-            List<Action> listOfActions = new List<Action>();
+            listOfActions.Clear();
             for (i = Limit; i <= ((Height - 1) - Limit); i++)
             {
 
@@ -216,8 +234,7 @@ namespace Canny_Edge_Detector
                 listOfActions.Add(() => GaussianRow(y));
             }
 
-            ParallelOptions options = new ParallelOptions { MaxDegreeOfParallelism = threads};
-            Parallel.Invoke(options,listOfActions.ToArray());          
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
         }
 
         private void GaussianRow(int i)
@@ -236,14 +253,13 @@ namespace Canny_Edge_Detector
             int i;
             int size = FilterX.GetLength(0);
 
-            List<Action> listOfActions = new List<Action>();
+            listOfActions.Clear();
             for (i = size / 2; i <= (Height - size / 2) - 1; i++)
             {
                 int y = i;
                 listOfActions.Add(() => FilterRow(y, size, FilterX, FilterY));
-            }
-            ParallelOptions options = new ParallelOptions { MaxDegreeOfParallelism = threads};
-            Parallel.Invoke(options, listOfActions.ToArray());
+            }   
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
         }
 
         private void FilterRow(int i, int size, int[,] FilterX, int[,] FilterY)
@@ -256,61 +272,6 @@ namespace Canny_Edge_Detector
             }
 
         }
-
-        private void GaussianFilter()
-        {
-
-            int i;
-            int j;
-            gaussianFilteredImage = greyImage;
-            int Limit = kernelSize / 2;
-            //for (i = Limit; i <= ((Height - 1) - Limit); i++)
-            Parallel.For(Limit, ((Height - 1) - Limit), new ParallelOptions { MaxDegreeOfParallelism = threads }, i =>
-            {
-                //for (j = Limit; j <= ((Width - 1) - Limit); j++)
-                Parallel.For(Limit, ((Width - 1) - Limit), new ParallelOptions { MaxDegreeOfParallelism = threads }, j =>
-                {
-                    gaussianFilteredImage[i, j] = CountSum(i, j, kernelSize, greyImage, gaussianKernel) / kernelWeight;
-                });
-            });
-            return;
-        }
-
-        private void NormalizeEdgeMap()
-        {
-            int i;
-            int j;
-            for (i = 0; i <= (Height - 1); i++)
-            {
-                for (j = 0; j <= (Width - 1); j++)
-                {
-                    edgeMap[i, j] = edgeMap[i, j] * 255;
-                }
-            }
-            return;
-        }
-
-        private void ApplyFilter(int[,] FilterX, int[,] FilterY)
-        {
-            int i;
-            int j;
-            int size = FilterX.GetLength(0);
-
-
-
-
-            for (i = size / 2; i <= (Height - size / 2) - 1; i++)
-            {
-                for (j = size / 2; j <= (Width - size / 2) - 1; j++)
-                {
-                    derivativeX[i, j] = CountSum(i, j, size, gaussianFilteredImage, FilterX);
-                    derivativeY[i, j] = CountSum(i, j, size, gaussianFilteredImage, FilterY);
-                }
-            }
-
-        }
-
-
 
         private int CountSum(int i, int j, int size, int[,] Data, int[,] Filter)
         {
@@ -331,14 +292,13 @@ namespace Canny_Edge_Detector
         {
             int i;
 
-            List<Action> listOfActions = new List<Action>();
+            listOfActions.Clear();
             for (i = 0; i <= (Height - 1); i++)
             {
                 int y = i;
                 listOfActions.Add(() => GradientMagnitudeRow(y));
             }
-            ParallelOptions options = new ParallelOptions { MaxDegreeOfParallelism = threads };
-            Parallel.Invoke(options, listOfActions.ToArray());
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
             return;
         }
 
@@ -350,24 +310,7 @@ namespace Canny_Edge_Detector
                 gradient[i, j] = (float)Math.Sqrt((derivativeX[i, j] * derivativeX[i, j]) + (derivativeY[i, j] * derivativeY[i, j]));
             }
         }
-
-        private void GradientMagnitude()
-        {
-            int i;
-            int j;
-            for (i = 0; i <= (Height - 1); i++)
-            {
-                for (j = 0; j <= (Width - 1); j++)
-                {
-                    gradient[i, j] = (float)Math.Sqrt((derivativeX[i, j] * derivativeX[i, j]) + (derivativeY[i, j] * derivativeY[i, j]));
-                }
-            }
-            return;
-        }
-
-
-
-
+  
         private void HysterisisThresholding()
         {
             int i;
@@ -394,16 +337,43 @@ namespace Canny_Edge_Detector
                     }
                 }
             }
+
             return;
         }
+
+        private void HysterisisThresholdingAsync()
+        {
+            int i;
+            listOfActions.Clear();
+            for (i = 0; i <= Height - 1; i++)
+            {
+                int y = i;
+                listOfActions.Add(() => HysterisisThresholdingRow(y));
+            }
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
+            return;
+        }
+
+        private void HysterisisThresholdingRow(int i)
+        {
+            int j;
+            for (j = 0; j <= Width - 1; j++)
+            {
+                if (edgePoints[i, j] == 1)
+                {
+                    FindConnectedWeakEdges(i, j);
+                }
+            }
+        }
+
 
         private void FindConnectedWeakEdges(int row, int col)
         {
             if (ifVisited[row, col] == false)
             {
-                for (int i = -2; i <= 2; i++)
+                for (int i = -1; i <= 1; i++)
                 {
-                    for (int j = -2; j <= 2; j++)
+                    for (int j = -1; j <= 1; j++)
                     {
                         if ((row + i > 0) && (col + j > 0) && (row + i < Width - 1) && (col + j < Height - 1) && edgePoints[row + i, col + j] == 2)
                         {
@@ -423,14 +393,13 @@ namespace Canny_Edge_Detector
             int i;
             int j;
 
-            List<Action> listOfActions = new List<Action>();
+            listOfActions.Clear();
             for (i = Limit; i <= (Height - Limit) - 1; i++)
             {
                 int y = i;
                 listOfActions.Add(() => NonMaxSuppressionRow(y));
             }
-            ParallelOptions options = new ParallelOptions { MaxDegreeOfParallelism = threads };
-            Parallel.Invoke(options, listOfActions.ToArray());
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
         }
 
         //
@@ -520,37 +489,81 @@ namespace Canny_Edge_Detector
             return;
         }
 
-        private void DoubleThresholding()
+        private void DoubleThresholdingAsync()
         {
+            int i;
             int Limit = kernelSize / 2;
+            listOfActions.Clear();
+            for (i = Limit; i <= (Height - Limit) - 1; i++)
+            {
+                int y = i;
+                listOfActions.Add(() => DoubleThresholdingRow(y, Limit));
+            }
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
+            return;
+        }
+
+        private void DoubleThresholdingRow(int i, int Limit)
+        {    
+            int j;
+            for (j = Limit; j <= (Width - Limit) - 1; j++)
+            {
+                postHysteresis[i, j] = (int)nonMax[i, j];
+
+                if (postHysteresis[i, j] >= highThreshold)
+                {
+                    edgePoints[i, j] = 1;
+                    strongEdges[i, j] = 255;
+                }
+                if ((postHysteresis[i, j] < highThreshold) && (postHysteresis[i, j] >= lowThreshold))
+                {
+
+                    edgePoints[i, j] = 2;
+                    weakEdges[i, j] = 255;
+
+                }
+            }
+        }
+
+        private void NormalizeEdgeMap()
+        {
             int i;
             int j;
-            //PostHysteresis = NonMax;
-            for (i = Limit; i <= (Height - Limit) - 1; i++)
+            for (i = 0; i <= (Height - 1); i++)
             {
-                for (j = Limit; j <= (Width - Limit) - 1; j++)
+                for (j = 0; j <= (Width - 1); j++)
                 {
-                    postHysteresis[i, j] = (int)nonMax[i, j];
+                    if (edgePoints[i, j] == 1)
+                    {
+                        edgeMap[i, j] = 255;
+                    }
                 }
-
             }
+            return;
 
-            for (i = Limit; i <= (Height - Limit) - 1; i++)
+        }
+
+        private void NormalizeEdgeMapAsync()
+        {
+            int i;
+            listOfActions.Clear();
+            for (i = 0; i <= (Height - 1); i++)
             {
-                for (j = Limit; j <= (Width - Limit) - 1; j++)
+                int y = i;
+                listOfActions.Add(() => NormalizeEdgeMapRow(y));
+            }
+            Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
+            return;
+        }
+
+        private void NormalizeEdgeMapRow(int i)
+        {
+            int j;
+            for (j = 0; j <= (Width - 1); j++)
+            {
+                if (edgePoints[i, j] == 1)
                 {
-                    if (postHysteresis[i, j] >= highThreshold)
-                    {
-                        edgePoints[i, j] = 1;
-                        strongEdges[i, j] = 255;
-                    }
-                    if ((postHysteresis[i, j] < highThreshold) && (postHysteresis[i, j] >= lowThreshold))
-                    {
-
-                        edgePoints[i, j] = 2;
-                        weakEdges[i, j] = 255;
-
-                    }
+                    edgeMap[i, j] = 255;
                 }
             }
         }

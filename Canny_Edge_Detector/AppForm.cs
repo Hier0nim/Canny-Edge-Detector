@@ -69,6 +69,13 @@ namespace Canny_Edge_Detector
 
             
             completionTimeLabel.Text = timeSpan.TotalSeconds.ToString();
+            gaussianTimeLabel.Text = (CannyData.dateTime2 - CannyData.dateTime1).TotalMilliseconds.ToString();
+            filtersTimeLabel.Text = (CannyData.dateTime3 - CannyData.dateTime2).TotalMilliseconds.ToString();
+            gradientTimeLabel.Text = (CannyData.dateTime4 - CannyData.dateTime3).TotalMilliseconds.ToString();
+            nonMaxTimeLabel.Text = (CannyData.dateTime5 - CannyData.dateTime4).TotalMilliseconds.ToString();
+            doubleTTimeLabel.Text = (CannyData.dateTime6 - CannyData.dateTime5).TotalMilliseconds.ToString();
+            hysterisisTimeLabel.Text = (CannyData.dateTime7 - CannyData.dateTime6).TotalMilliseconds.ToString();
+            normalizeTimeLabel.Text = (CannyData.dateTime8 - CannyData.dateTime7).TotalMilliseconds.ToString();
 
             GC.Collect();
         }
@@ -83,6 +90,21 @@ namespace Canny_Edge_Detector
             {
                 return -1;
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
