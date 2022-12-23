@@ -66,6 +66,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.normalizeTimeLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             this.inputGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputPictureBox)).BeginInit();
             this.gaussianGroupBox.SuspendLayout();
@@ -468,11 +469,23 @@
             this.label12.Text = "Normalize Time";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(409, 813);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(114, 33);
+            this.saveButton.TabIndex = 29;
+            this.saveButton.Text = "Save Image";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 860);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.normalizeTimeLabel);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.hysterisisTimeLabel);
@@ -566,5 +579,6 @@
         private Label label11;
         private Label normalizeTimeLabel;
         private Label label12;
+        private Button saveButton;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
@@ -232,7 +233,6 @@ namespace Canny_Edge_Detector
                 int y = i;
                 listOfActions.Add(() => GaussianRow(y));
             }
-
             Parallel.Invoke(degreeOfParallelism, listOfActions.ToArray());
         }
 
@@ -244,7 +244,6 @@ namespace Canny_Edge_Detector
             {
                 gaussianFilteredImage[i, j] = CountSum(i, j, kernelSize, greyImage, gaussianKernel) / kernelWeight;
             }
-
         }
 
         private void ApplyFilterAsync(int[,] FilterX, int[,] FilterY)
@@ -344,7 +343,7 @@ namespace Canny_Edge_Detector
                 {
                     for (int j = -1; j <= 1; j++)
                     {
-                        if ((row + i > 0) && (col + j > 0) && (row + i < Width - 1) && (col + j < Height - 1) && edgePoints[row + i, col + j] == 2)
+                        if ((row + i > 0) && (col + j > 0) && (row + i < Height - 1) && (col + j < Width - 1) && edgePoints[row + i, col + j] == 2)
                         {
                             edgePoints[row + i, col + j] = 1;
                             FindConnectedWeakEdges(row + i, col + j);
@@ -387,7 +386,7 @@ namespace Canny_Edge_Detector
             float angle = (float)(Math.Atan2(derivativeY[i, j], derivativeX[i, j]) * 180 / Math.PI); //rad to degree
 
             //Horizontal Edge
-            if (((angle >= -22.5) && (angle <= 22.5)) || ((angle < -157.5) && (angle >= -180)))
+            if (((angle >= -22.5) && (angle <= 22.5)) || ((angle <= -157.5) && (angle >= 157.5)))
             {
                 if ((gradient[i, j] >= gradient[i, j + 1]) && (gradient[i, j] >= gradient[i, j - 1]))
                 {
@@ -400,7 +399,7 @@ namespace Canny_Edge_Detector
             }
 
             //Vertical Edge
-            else if (((angle >= 67.5) && (angle <= 112.5)) || ((angle < -67.5) && (angle >= -112.5)))
+            else if (((angle >= 67.5) && (angle <= 112.5)) || ((angle <= -67.5) && (angle >= -112.5)))
             {
                 if ((gradient[i, j] >= gradient[i + 1, j]) && (gradient[i, j] >= gradient[i - 1, j]))
                 {
@@ -413,7 +412,7 @@ namespace Canny_Edge_Detector
             }
 
             //+45 Degree Edge
-            else if (((angle >= 112.5) && (angle <= 157.5)) || ((angle < -22.5) && (angle >= -67.5)))
+            else if (((angle > 112.5) && (angle < 157.5)) || ((angle < -22.5) && (angle > -67.5)))
             {
                 if ((gradient[i, j] >= gradient[i + 1, j - 1]) && (gradient[i, j] >= gradient[i - 1, j + 1]))
                 {
@@ -426,7 +425,7 @@ namespace Canny_Edge_Detector
             }
 
             //-45 Degree Edge
-            else if (((angle >= 22.5) && (angle <= 67.5)) || ((angle < -112.5) && (angle >= -157.5)))
+            else if (((angle > 22.5) && (angle < 67.5)) || ((angle < -112.5) && (angle > -157.5)))
             {
                 if ((gradient[i, j] >= gradient[i + 1, j + 1]) && (gradient[i, j] >= gradient[i - 1, j - 1]))
                 {

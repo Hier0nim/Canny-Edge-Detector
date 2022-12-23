@@ -17,7 +17,10 @@ namespace Canny_Edge_Detector
             OpenFileDialog open = new()
             {
                 // image filters   
-                Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp"
+
+                Filter = "Bitmap files (*.bmp)|*.bmp|PNG files (*.png)|*.png|TIFF files (*.tif)|*tif|JPEG files (*.jpg)|*.jpg",
+                FilterIndex = 4,
+                RestoreDirectory = true
             };
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -91,6 +94,24 @@ namespace Canny_Edge_Detector
                 return -1;
             }
         }
-    
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new()
+            {
+                // image filters   
+
+                Filter = "Bitmap files (*.bmp)|*.bmp|PNG files (*.png)|*.png|TIFF files (*.tif)|*tif|JPEG files (*.jpg)|*.jpg",
+                FilterIndex = 4,
+                RestoreDirectory = true,
+                AddExtension = true
+            };
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+
+                CannyData.DisplayImage(CannyData.EdgeMap).Save(dialog.FileName);
+            }
+
+        }
     }
 }
