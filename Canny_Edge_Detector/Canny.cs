@@ -21,28 +21,27 @@ namespace Canny_Edge_Detector
 
         private readonly int Height;
         private readonly int Width;
+        private readonly ParallelOptions degreeOfParallelism;
+        private List<Action> listOfActions;
 
-        List<Action> listOfActions;
-        ParallelOptions degreeOfParallelism;
-
-        private int[,] greyImage;
-        private int[,] gaussianFilteredImage;
-        private int[,] postHysteresis;
-        private int[,] edgePoints;
-        private int[,] edgeMap;
-        private int[,] derivativeX;
-        private int[,] derivativeY;
-        private int[,] strongEdges;
-        private int[,] weakEdges;
+        private int[,] greyImage = null!;
+        private int[,] gaussianFilteredImage = null!;
+        private int[,] postHysteresis = null!;
+        private int[,] edgePoints = null!;
+        private int[,] edgeMap = null!;
+        private int[,] derivativeX = null!;
+        private int[,] derivativeY = null!;
+        private int[,] strongEdges = null!;
+        private int[,] weakEdges = null!;
 
         private Boolean[,] ifVisited;
 
 
-        private float[,] gradient;
-        private float[,] nonMax;
+        private float[,] gradient = null!;
+        private float[,] nonMax = null!;
 
         //Gaussian Kernel Data
-        private int[,] gaussianKernel =
+        private readonly int[,] gaussianKernel =
         {
             {1,4,7,4,1},
             {4,16,26,16,4},
@@ -50,12 +49,12 @@ namespace Canny_Edge_Detector
             {4,16,26,16,4},
             {1,4,7,4,1}
         };
-        private int kernelWeight = 271;
-        private int kernelSize = 5;
+        private readonly int kernelWeight = 271;
+        private readonly int kernelSize = 5;
 
         //Threshold Data
-        private float highThreshold;
-        private float lowThreshold;
+        private readonly float highThreshold;
+        private readonly float lowThreshold;
 
         public int[,] GaussianFilteredImage { get => gaussianFilteredImage; }
         public int[,] EdgeMap { get => edgeMap; }
@@ -273,7 +272,7 @@ namespace Canny_Edge_Detector
 
         }
 
-        private int CountSum(int i, int j, int size, int[,] Data, int[,] Filter)
+        private static int CountSum(int i, int j, int size, int[,] Data, int[,] Filter)
         {
             int k;
             int l;
@@ -311,36 +310,6 @@ namespace Canny_Edge_Detector
             }
         }
   
-        private void HysterisisThresholding()
-        {
-            int i;
-            int j;
-
-            for (i = 0; i <= Height - 1; i++)
-            {
-                for (j = 0; j <= Width - 1; j++)
-                {
-                    if (edgePoints[i, j] == 1)
-                    {
-                        FindConnectedWeakEdges(i, j);
-                    }
-                }
-            }
-
-            for (i = 0; i <= Height - 1; i++)
-            {
-                for (j = 0; j <= (Width - 1); j++)
-                {
-                    if (edgePoints[i, j] == 1)
-                    {
-                        edgeMap[i, j] = 1;
-                    }
-                }
-            }
-
-            return;
-        }
-
         private void HysterisisThresholdingAsync()
         {
             int i;
@@ -366,11 +335,11 @@ namespace Canny_Edge_Detector
             }
         }
 
-
         private void FindConnectedWeakEdges(int row, int col)
         {
             if (ifVisited[row, col] == false)
             {
+                ifVisited[row, col] = true;
                 for (int i = -1; i <= 1; i++)
                 {
                     for (int j = -1; j <= 1; j++)
@@ -381,8 +350,7 @@ namespace Canny_Edge_Detector
                             FindConnectedWeakEdges(row + i, col + j);
                         }
                     }
-                }
-                ifVisited[row, col] = true;
+                }              
             }
             return;
         }
@@ -391,7 +359,6 @@ namespace Canny_Edge_Detector
         {
             int Limit = kernelSize / 2;
             int i;
-            int j;
 
             listOfActions.Clear();
             for (i = Limit; i <= (Height - Limit) - 1; i++)
@@ -411,22 +378,6 @@ namespace Canny_Edge_Detector
             for (j = Limit; j <= (Width - Limit) - 1; j++)
             {
                 NonMaxSuppressionEdges(i, j);
-            }
-            return;
-        }
-
-        private void NonMaxSuppression()
-        {
-            int Limit = kernelSize / 2;
-            int i;
-            int j;
-
-            for (i = Limit; i <= (Height - Limit) - 1; i++)
-            {
-                for (j = Limit; j <= (Width - Limit) - 1; j++)
-                {
-                    NonMaxSuppressionEdges(i, j);
-                }
             }
             return;
         }

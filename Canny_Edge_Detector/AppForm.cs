@@ -4,7 +4,7 @@ namespace Canny_Edge_Detector
 {
     public partial class AppForm : Form
     {
-        internal Canny CannyData { get; private set; }
+        internal Canny CannyData { get; private set; } = null!;
 
         public AppForm()
         {
@@ -14,9 +14,11 @@ namespace Canny_Edge_Detector
         private void SelectImageButton_Click(object sender, EventArgs e)
         {
             // open file dialog   
-            OpenFileDialog open = new OpenFileDialog();
-            // image filters   
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
+            OpenFileDialog open = new()
+            {
+                // image filters   
+                Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp"
+            };
             if (open.ShowDialog() == DialogResult.OK)
             {
                 // display image in picture box  
@@ -24,9 +26,9 @@ namespace Canny_Edge_Detector
             }
         }
 
-        private void processImageButton_Click(object sender, EventArgs e)
+        private void ProcessImageButton_Click(object sender, EventArgs e)
         {
-            int threads = getNumberOfThreads();
+            int threads = GetNumberOfThreads();
             if(threads <= 0 || threads > 64)
             {
                 return;
@@ -44,15 +46,13 @@ namespace Canny_Edge_Detector
                 TL = 15;
             }
 
-            DateTime dateTime1 = new DateTime();
-            DateTime dateTime2 = new DateTime();
-            TimeSpan timeSpan = new TimeSpan();
+            TimeSpan timeSpan;
 
-            dateTime1 = DateTime.Now;
+            DateTime dateTime1 = DateTime.Now;
 
             CannyData = new Canny((Bitmap)inputPictureBox.Image, TH, TL, threads);
 
-            dateTime2 = DateTime.Now;
+            DateTime dateTime2 = DateTime.Now;
             timeSpan = dateTime2 - dateTime1;
 
             gaussianPictureBox.Image = CannyData.DisplayImage(CannyData.GaussianFilteredImage);
@@ -80,7 +80,7 @@ namespace Canny_Edge_Detector
             GC.Collect();
         }
 
-        private int getNumberOfThreads()
+        private int GetNumberOfThreads()
         {
             try
             {
@@ -91,20 +91,6 @@ namespace Canny_Edge_Detector
                 return -1;
             }
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click_1(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

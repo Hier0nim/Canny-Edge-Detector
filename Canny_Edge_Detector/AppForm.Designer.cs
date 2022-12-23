@@ -190,7 +190,7 @@
             this.processImageButton.TabIndex = 5;
             this.processImageButton.Text = "Process Image";
             this.processImageButton.UseVisualStyleBackColor = true;
-            this.processImageButton.Click += new System.EventHandler(this.processImageButton_Click);
+            this.processImageButton.Click += new System.EventHandler(this.ProcessImageButton_Click);
             // 
             // nonMaxGroupBox
             // 
@@ -353,7 +353,6 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Gaussian Time";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.Click += new System.EventHandler(this.label6_Click_1);
             // 
             // filtersTimeLabel
             // 

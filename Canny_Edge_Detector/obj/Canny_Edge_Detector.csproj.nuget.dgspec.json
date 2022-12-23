@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hieronim\\Documents\\GitHub\\Canny_Edge_Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj": {}
+    "C:\\Users\\hieronim\\Documents\\GitHub\\Canny-Edge-Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hieronim\\Documents\\GitHub\\Canny_Edge_Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj": {
+    "C:\\Users\\hieronim\\Documents\\GitHub\\Canny-Edge-Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny_Edge_Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj",
+        "projectUniqueName": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny-Edge-Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj",
         "projectName": "Canny_Edge_Detector",
-        "projectPath": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny_Edge_Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj",
+        "projectPath": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny-Edge-Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj",
         "packagesPath": "C:\\Users\\hieronim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny_Edge_Detector\\Canny_Edge_Detector\\obj\\",
+        "outputPath": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny-Edge-Detector\\Canny_Edge_Detector\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

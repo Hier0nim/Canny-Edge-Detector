@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "12yKQOOFhITqAYG0vlATF7MYGtJnVRdPFEk5EI4ex8WMOTgOTD82myAjBAKI/laoZRdDAP+geafjZ8yH8odMPA==",
+  "dgSpecHash": "22Ui3KOKv6vpjeh6bD3PqoaTu9NacaJVTDMKIzHV5/OUBPbOowL2H2bcY0zzdpCjJWh8X8Zz1yWn8lhBA32mjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny_Edge_Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj",
+  "projectFilePath": "C:\\Users\\hieronim\\Documents\\GitHub\\Canny-Edge-Detector\\Canny_Edge_Detector\\Canny_Edge_Detector.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hieronim\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\hieronim\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
