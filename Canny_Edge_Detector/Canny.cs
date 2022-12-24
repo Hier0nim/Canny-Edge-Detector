@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
@@ -54,8 +55,8 @@ namespace Canny_Edge_Detector
         private readonly int kernelSize = 5;
 
         //Threshold Data
-        private readonly float highThreshold;
-        private readonly float lowThreshold;
+        private float highThreshold;
+        private float lowThreshold;
 
         public int[,] GaussianFilteredImage { get => gaussianFilteredImage; }
         public int[,] EdgeMap { get => edgeMap; }
@@ -194,6 +195,7 @@ namespace Canny_Edge_Detector
                 {-1,-2,-1}
             };
 
+            //CalculateThresholdValues();
 
             dateTime1 = DateTime.Now;
             //Apply gaussian blur: 4007
@@ -219,6 +221,33 @@ namespace Canny_Edge_Detector
             dateTime8 = DateTime.Now;
             return;
 
+        }
+
+        private void CalculateThresholdValues()
+        {
+            var list = new List<int>();
+            for (int i = 0; i < Height; i++)
+            {
+                for (int j = 0; j < Width; j++)
+                {
+                     list.Add(greyImage[i,j]);
+                }
+            }
+            // sort the list.
+            list.Sort();
+            float median;
+            int middle = list.Count / 2;
+            if (list.Count % 2 == 1)
+            {
+                median = list[middle];
+            }
+            else
+            {
+                median = ((list[middle - 1] + list[middle]) / 2.0f);
+            }
+
+            lowThreshold = median * 0.66f;
+            highThreshold = median * 1.33f;
         }
 
         private void GaussianFilterAsync()
@@ -385,8 +414,8 @@ namespace Canny_Edge_Detector
         {
             float angle = (float)(Math.Atan2(derivativeY[i, j], derivativeX[i, j]) * 180 / Math.PI); //rad to degree
 
-            //Horizontal Edge
-            if (((angle >= -22.5) && (angle <= 22.5)) || ((angle <= -157.5) && (angle >= 157.5)))
+            //Vertical Edge
+            if ((Math.Abs(angle) <= 22.5) || (Math.Abs(angle) >= 157.5))
             {
                 if ((gradient[i, j] >= gradient[i, j + 1]) && (gradient[i, j] >= gradient[i, j - 1]))
                 {
@@ -398,8 +427,8 @@ namespace Canny_Edge_Detector
                 }
             }
 
-            //Vertical Edge
-            else if (((angle >= 67.5) && (angle <= 112.5)) || ((angle <= -67.5) && (angle >= -112.5)))
+            //Horizontal Edge
+            else if ((Math.Abs(angle) >= 67.5) && (Math.Abs(angle) <= 112.5))
             {
                 if ((gradient[i, j] >= gradient[i + 1, j]) && (gradient[i, j] >= gradient[i - 1, j]))
                 {
