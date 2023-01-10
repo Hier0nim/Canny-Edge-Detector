@@ -5,6 +5,7 @@ namespace Canny_Edge_Detector
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main()
         {

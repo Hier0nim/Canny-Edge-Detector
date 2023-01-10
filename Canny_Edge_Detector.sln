@@ -6,9 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canny_Edge_Detector", "Canny_Edge_Detector\Canny_Edge_Detector.csproj", "{CF46B265-A78F-49D7-8E77-BA4647E570E0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3E9C5F00-FBEE-4A16-B2A4-47010499BC1F} = {3E9C5F00-FBEE-4A16-B2A4-47010499BC1F}
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367} = {980AD02F-B22D-4DEA-AA6D-847CD34EE367}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JAAsm", "JAAsm\JAAsm.vcxproj", "{3E9C5F00-FBEE-4A16-B2A4-47010499BC1F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JACpp", "JACpp\JACpp.vcxproj", "{980AD02F-B22D-4DEA-AA6D-847CD34EE367}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,8 +31,8 @@ Global
 		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Debug|x86.Build.0 = Debug|Any CPU
 		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|x64.ActiveCfg = Release|Any CPU
-		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|x64.Build.0 = Release|Any CPU
+		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|x64.ActiveCfg = Release|x64
+		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|x64.Build.0 = Release|x64
 		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|x86.ActiveCfg = Release|Any CPU
 		{CF46B265-A78F-49D7-8E77-BA4647E570E0}.Release|x86.Build.0 = Release|Any CPU
 		{3E9C5F00-FBEE-4A16-B2A4-47010499BC1F}.Debug|Any CPU.ActiveCfg = Debug|x64
@@ -44,6 +47,18 @@ Global
 		{3E9C5F00-FBEE-4A16-B2A4-47010499BC1F}.Release|x64.Build.0 = Release|x64
 		{3E9C5F00-FBEE-4A16-B2A4-47010499BC1F}.Release|x86.ActiveCfg = Release|Win32
 		{3E9C5F00-FBEE-4A16-B2A4-47010499BC1F}.Release|x86.Build.0 = Release|Win32
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Debug|Any CPU.Build.0 = Debug|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Debug|x64.ActiveCfg = Debug|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Debug|x64.Build.0 = Debug|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Debug|x86.ActiveCfg = Debug|Win32
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Debug|x86.Build.0 = Debug|Win32
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Release|Any CPU.ActiveCfg = Release|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Release|Any CPU.Build.0 = Release|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Release|x64.ActiveCfg = Release|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Release|x64.Build.0 = Release|x64
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Release|x86.ActiveCfg = Release|Win32
+		{980AD02F-B22D-4DEA-AA6D-847CD34EE367}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
