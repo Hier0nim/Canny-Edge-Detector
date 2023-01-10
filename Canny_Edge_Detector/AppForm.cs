@@ -188,6 +188,7 @@ namespace Canny_Edge_Detector
                 }
                 timesExecutedLabel.Text = (i+1).ToString() + " / 100";
                 timesExecutedLabel.Refresh();
+                GC.Collect();
             }
             avgDllTime = timeSpan2 / 10;
             DateTime dateTime2 = DateTime.Now;
@@ -216,8 +217,6 @@ namespace Canny_Edge_Detector
             normalizeTimeLabel.Text = timeSpan7.TotalMilliseconds.ToString();
 
             avgDllTimeLabel.Text = avgDllTime.TotalMilliseconds.ToString();
-
-            GC.Collect();
         }
     }
 }
