@@ -490,7 +490,7 @@
             this.multipleProcessButton.Name = "multipleProcessButton";
             this.multipleProcessButton.Size = new System.Drawing.Size(100, 25);
             this.multipleProcessButton.TabIndex = 32;
-            this.multipleProcessButton.Text = "Process 100X";
+            this.multipleProcessButton.Text = "Process 10X";
             this.multipleProcessButton.UseVisualStyleBackColor = true;
             this.multipleProcessButton.Click += new System.EventHandler(this.MultipleProcessButton_Click);
             // 

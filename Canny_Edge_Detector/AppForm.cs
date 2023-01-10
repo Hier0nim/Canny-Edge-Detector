@@ -124,7 +124,20 @@ namespace Canny_Edge_Detector
         /// </summary>
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            SaveFileDialog dialog = new()
+            {
+                // image filters   
 
+                Filter = "Bitmap files (*.bmp)|*.bmp|PNG files (*.png)|*.png|TIFF files (*.tif)|*tif|JPEG files (*.jpg)|*.jpg",
+                FilterIndex = 4,
+                RestoreDirectory = true,
+                AddExtension = true
+            };
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+
+                CannyData.DisplayImage(CannyData.EdgeMap).Save(dialog.FileName);
+            }
         }
 
         /// <summary>
@@ -162,10 +175,11 @@ namespace Canny_Edge_Detector
             TimeSpan timeSpan7 = new();
 
             DateTime dateTime1 = DateTime.Now;
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 CannyData = new Canny((Bitmap)inputPictureBox.Image, TH, TL, threads, useAssemblyCode, autoThresholdValues);
-                if(i == 0)
+                GC.Collect();
+                if (i == 0)
                 {
                     timeSpan1 = (CannyData.dateTime2 - CannyData.dateTime1);
                     timeSpan2 = (CannyData.dateTime3 - CannyData.dateTime2);
@@ -186,9 +200,8 @@ namespace Canny_Edge_Detector
                     timeSpan7 += (CannyData.dateTime8 - CannyData.dateTime7);
                     
                 }
-                timesExecutedLabel.Text = (i+1).ToString() + " / 100";
+                timesExecutedLabel.Text = (i+1).ToString() + " / 10";
                 timesExecutedLabel.Refresh();
-                GC.Collect();
             }
             avgDllTime = timeSpan2 / 10;
             DateTime dateTime2 = DateTime.Now;
@@ -217,6 +230,7 @@ namespace Canny_Edge_Detector
             normalizeTimeLabel.Text = timeSpan7.TotalMilliseconds.ToString();
 
             avgDllTimeLabel.Text = avgDllTime.TotalMilliseconds.ToString();
+            GC.Collect();
         }
     }
 }
