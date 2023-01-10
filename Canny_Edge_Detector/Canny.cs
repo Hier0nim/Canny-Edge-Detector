@@ -15,18 +15,17 @@ namespace Canny_Edge_Detector
     /// </summary>
     class Canny
     {
-
         // 3x3 Filter apply MASM64 DLL import
         [DllImport(@"C:\Users\hieronim\Documents\GitHub\Canny-Edge-Detector\x64\Release\JAAsm.dll")]
-        static extern void Calculate3x3(IntPtr array1, IntPtr filter, IntPtr resArray, int size);
+        static extern void Calculate3x3(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
 
         // // 3x3 Filter apply C++ DLL import
         [DllImport(@"C:\Users\hieronim\Documents\GitHub\Canny-Edge-Detector\x64\Release\JACpp.dll")]
-        static extern void Calculate3x3Cpp(IntPtr array1, IntPtr filter, IntPtr resArray, int size);
+        static extern void Calculate3x3Cpp(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
 
         // Gaussian filter MASM64 DLL import
         [DllImport(@"C:\Users\hieronim\Documents\GitHub\Canny-Edge-Detector\x64\Release\JAAsm.dll")]
-        static extern void Gaussian(IntPtr array1, IntPtr filter, IntPtr resArray, int size, int weight);
+        static extern void Gaussian(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size, int weight);
 
         // Variable wchich value decides if the assembly code is used
         private readonly bool useAsseblyCode;
@@ -367,14 +366,9 @@ namespace Canny_Edge_Detector
             for (i = size / 2; i <= (Height - size / 2) - 1; i++)
             {
                 int y = i;
-                if(useAsseblyCode == true)
-                {
-                    listOfActions.Add(() => FilterRowAsm(y));
-                }
-                else
-                {
-                    listOfActions.Add(() => FilterRow(y));
-                }
+
+                listOfActions.Add(() => FilterRow(y));
+                
             }
             Parallel.Invoke(numberOfThreads, listOfActions.ToArray());
 
@@ -386,22 +380,17 @@ namespace Canny_Edge_Detector
                 IntPtr filterXPtr = Marshal.UnsafeAddrOfPinnedArrayElement(modifiedDx, 0);
                 IntPtr filterYPtr = Marshal.UnsafeAddrOfPinnedArrayElement(modifiedDy, 0);
 
-                Calculate3x3Cpp(arrayPtr, filterXPtr, resultArrayXPtr, Width);
-                Calculate3x3Cpp(arrayPtr, filterYPtr, resultArrayYPtr, Width);
+                if (useAsseblyCode == true)
+                {
+                    Calculate3x3(arrayPtr, filterXPtr, resultArrayXPtr, Width);
+                    Calculate3x3(arrayPtr, filterYPtr, resultArrayYPtr, Width);
+                }
+                else
+                {
+                    Calculate3x3Cpp(arrayPtr, filterXPtr, resultArrayXPtr, Width);
+                    Calculate3x3Cpp(arrayPtr, filterYPtr, resultArrayYPtr, Width);
+                }
 
-            }
-
-            void FilterRowAsm(int i)
-            {
-
-                IntPtr arrayPtr = Marshal.UnsafeAddrOfPinnedArrayElement(gaussianFilteredImage, Width * i);
-                IntPtr resultArrayXPtr = Marshal.UnsafeAddrOfPinnedArrayElement(derivativeX, Width * i);
-                IntPtr resultArrayYPtr = Marshal.UnsafeAddrOfPinnedArrayElement(derivativeY, Width * i);
-                IntPtr filterXPtr = Marshal.UnsafeAddrOfPinnedArrayElement(modifiedDx, 0);
-                IntPtr filterYPtr = Marshal.UnsafeAddrOfPinnedArrayElement(modifiedDy, 0);
-
-                Calculate3x3(arrayPtr, filterXPtr, resultArrayXPtr, Width);
-                Calculate3x3(arrayPtr, filterYPtr, resultArrayYPtr, Width);
             }
             return;
         }

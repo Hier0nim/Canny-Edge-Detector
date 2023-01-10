@@ -178,7 +178,6 @@ namespace Canny_Edge_Detector
             for (int i = 0; i < 10; i++)
             {
                 CannyData = new Canny((Bitmap)inputPictureBox.Image, TH, TL, threads, useAssemblyCode, autoThresholdValues);
-                GC.Collect();
                 if (i == 0)
                 {
                     timeSpan1 = (CannyData.dateTime2 - CannyData.dateTime1);
