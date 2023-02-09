@@ -16,15 +16,15 @@ namespace Canny_Edge_Detector
     class Canny
     {
         // 3x3 Filter apply MASM64 DLL import
-        [DllImport(@"C:\Users\hieronim\Documents\GitHub\Canny-Edge-Detector\x64\Release\JAAsm.dll")]
+        [DllImport(@"..\..\..\..\x64\Release\JAAsm.dll")]
         static extern void Calculate3x3(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
 
         // // 3x3 Filter apply C++ DLL import
-        [DllImport(@"C:\Users\hieronim\Documents\GitHub\Canny-Edge-Detector\x64\Release\JACpp.dll")]
+        [DllImport(@"..\..\..\..\x64\Release\JACpp.dll")]
         static extern void Calculate3x3Cpp(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
 
         // Gaussian filter MASM64 DLL import
-        [DllImport(@"C:\Users\hieronim\Documents\GitHub\Canny-Edge-Detector\x64\Release\JAAsm.dll")]
+        [DllImport(@"..\..\..\..\x64\Release\JAAsm.dll")]
         static extern void Gaussian(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size, int weight);
 
         // Variable wchich value decides if the assembly code is used
