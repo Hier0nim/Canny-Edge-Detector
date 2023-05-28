@@ -52,7 +52,7 @@ namespace Canny_Edge_Detector
             bool autoThresholdValues = autoThreshold.Checked;
 
             int threads = GetNumberOfThreads();
-            if(threads <= 0 || threads > 64)
+            if (threads <= 0 || threads > 64)
             {
                 return;
             }
@@ -88,9 +88,9 @@ namespace Canny_Edge_Detector
             highThresholdPictureBox.Image = CannyData.DisplayImage(CannyData.StrongEdges);
 
             finalPictureBox.Image = CannyData.DisplayImage(CannyData.EdgeMap);
-            
+
             timesExecutedLabel.Text = 1.ToString();
-            
+
             completionTimeLabel.Text = timeSpan.TotalSeconds.ToString();
             gaussianTimeLabel.Text = (CannyData.dateTime2 - CannyData.dateTime1).TotalMilliseconds.ToString();
             filtersTimeLabel.Text = (CannyData.dateTime3 - CannyData.dateTime2).TotalMilliseconds.ToString();
@@ -197,9 +197,9 @@ namespace Canny_Edge_Detector
                     timeSpan5 += (CannyData.dateTime6 - CannyData.dateTime5);
                     timeSpan6 += (CannyData.dateTime7 - CannyData.dateTime6);
                     timeSpan7 += (CannyData.dateTime8 - CannyData.dateTime7);
-                    
+
                 }
-                timesExecutedLabel.Text = (i+1).ToString() + " / 10";
+                timesExecutedLabel.Text = (i + 1).ToString() + " / 10";
                 timesExecutedLabel.Refresh();
             }
             avgDllTime = timeSpan2 / 10;

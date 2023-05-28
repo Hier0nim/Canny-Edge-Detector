@@ -28,575 +28,601 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.inputGroupBox = new System.Windows.Forms.GroupBox();
-            this.inputPictureBox = new System.Windows.Forms.PictureBox();
-            this.gaussianGroupBox = new System.Windows.Forms.GroupBox();
-            this.gaussianPictureBox = new System.Windows.Forms.PictureBox();
-            this.highThresholdGroupBox = new System.Windows.Forms.GroupBox();
-            this.highThresholdPictureBox = new System.Windows.Forms.PictureBox();
-            this.lowThresholdGroupBox = new System.Windows.Forms.GroupBox();
-            this.lowThresholdPictureBox = new System.Windows.Forms.PictureBox();
-            this.SelectImageButton = new System.Windows.Forms.Button();
-            this.processImageButton = new System.Windows.Forms.Button();
-            this.nonMaxGroupBox = new System.Windows.Forms.GroupBox();
-            this.nonMaxPictureBox = new System.Windows.Forms.PictureBox();
-            this.finalGroupBox = new System.Windows.Forms.GroupBox();
-            this.finalPictureBox = new System.Windows.Forms.PictureBox();
-            this.sobelGroupBox = new System.Windows.Forms.GroupBox();
-            this.gradientPictureBox = new System.Windows.Forms.PictureBox();
-            this.highThresholdTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lowThresholdTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.threadsTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.completionTimeLabel = new System.Windows.Forms.Label();
-            this.gaussianTimeLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.filtersTimeLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.gradientTimeLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.nonMaxTimeLabel = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.doubleTTimeLabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.hysterisisTimeLabel = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.normalizeTimeLabel = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.useAssembly = new System.Windows.Forms.CheckBox();
-            this.autoThreshold = new System.Windows.Forms.CheckBox();
-            this.multipleProcessButton = new System.Windows.Forms.Button();
-            this.avgDllTimeLabel = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.timesExecutedLabel = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.inputGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inputPictureBox)).BeginInit();
-            this.gaussianGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gaussianPictureBox)).BeginInit();
-            this.highThresholdGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.highThresholdPictureBox)).BeginInit();
-            this.lowThresholdGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lowThresholdPictureBox)).BeginInit();
-            this.nonMaxGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nonMaxPictureBox)).BeginInit();
-            this.finalGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finalPictureBox)).BeginInit();
-            this.sobelGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gradientPictureBox)).BeginInit();
-            this.SuspendLayout();
+            inputGroupBox = new GroupBox();
+            inputPictureBox = new PictureBox();
+            gaussianGroupBox = new GroupBox();
+            gaussianPictureBox = new PictureBox();
+            highThresholdGroupBox = new GroupBox();
+            highThresholdPictureBox = new PictureBox();
+            lowThresholdGroupBox = new GroupBox();
+            lowThresholdPictureBox = new PictureBox();
+            SelectImageButton = new Button();
+            processImageButton = new Button();
+            nonMaxGroupBox = new GroupBox();
+            nonMaxPictureBox = new PictureBox();
+            finalGroupBox = new GroupBox();
+            finalPictureBox = new PictureBox();
+            sobelGroupBox = new GroupBox();
+            gradientPictureBox = new PictureBox();
+            highThresholdTextBox = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            lowThresholdTextBox = new TextBox();
+            label3 = new Label();
+            threadsTextBox = new TextBox();
+            label4 = new Label();
+            completionTimeLabel = new Label();
+            gaussianTimeLabel = new Label();
+            label6 = new Label();
+            filtersTimeLabel = new Label();
+            label7 = new Label();
+            gradientTimeLabel = new Label();
+            label8 = new Label();
+            nonMaxTimeLabel = new Label();
+            label9 = new Label();
+            doubleTTimeLabel = new Label();
+            label10 = new Label();
+            hysterisisTimeLabel = new Label();
+            label11 = new Label();
+            normalizeTimeLabel = new Label();
+            label12 = new Label();
+            saveButton = new Button();
+            useAssembly = new CheckBox();
+            autoThreshold = new CheckBox();
+            multipleProcessButton = new Button();
+            avgDllTimeLabel = new Label();
+            label13 = new Label();
+            timesExecutedLabel = new Label();
+            label14 = new Label();
+            inputGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)inputPictureBox).BeginInit();
+            gaussianGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gaussianPictureBox).BeginInit();
+            highThresholdGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)highThresholdPictureBox).BeginInit();
+            lowThresholdGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)lowThresholdPictureBox).BeginInit();
+            nonMaxGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nonMaxPictureBox).BeginInit();
+            finalGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)finalPictureBox).BeginInit();
+            sobelGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gradientPictureBox).BeginInit();
+            SuspendLayout();
             // 
             // inputGroupBox
             // 
-            this.inputGroupBox.Controls.Add(this.inputPictureBox);
-            this.inputGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.inputGroupBox.Name = "inputGroupBox";
-            this.inputGroupBox.Size = new System.Drawing.Size(268, 284);
-            this.inputGroupBox.TabIndex = 0;
-            this.inputGroupBox.TabStop = false;
-            this.inputGroupBox.Text = "Input Image";
+            inputGroupBox.Controls.Add(inputPictureBox);
+            inputGroupBox.Location = new Point(14, 16);
+            inputGroupBox.Margin = new Padding(3, 4, 3, 4);
+            inputGroupBox.Name = "inputGroupBox";
+            inputGroupBox.Padding = new Padding(3, 4, 3, 4);
+            inputGroupBox.Size = new Size(306, 379);
+            inputGroupBox.TabIndex = 0;
+            inputGroupBox.TabStop = false;
+            inputGroupBox.Text = "Input Image";
             // 
             // inputPictureBox
             // 
-            this.inputPictureBox.Location = new System.Drawing.Point(6, 22);
-            this.inputPictureBox.Name = "inputPictureBox";
-            this.inputPictureBox.Size = new System.Drawing.Size(256, 256);
-            this.inputPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.inputPictureBox.TabIndex = 0;
-            this.inputPictureBox.TabStop = false;
+            inputPictureBox.Location = new Point(7, 29);
+            inputPictureBox.Margin = new Padding(3, 4, 3, 4);
+            inputPictureBox.Name = "inputPictureBox";
+            inputPictureBox.Size = new Size(293, 341);
+            inputPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            inputPictureBox.TabIndex = 0;
+            inputPictureBox.TabStop = false;
             // 
             // gaussianGroupBox
             // 
-            this.gaussianGroupBox.Controls.Add(this.gaussianPictureBox);
-            this.gaussianGroupBox.Location = new System.Drawing.Point(286, 12);
-            this.gaussianGroupBox.Name = "gaussianGroupBox";
-            this.gaussianGroupBox.Size = new System.Drawing.Size(268, 284);
-            this.gaussianGroupBox.TabIndex = 1;
-            this.gaussianGroupBox.TabStop = false;
-            this.gaussianGroupBox.Text = "Gaussian Filtered Image";
+            gaussianGroupBox.Controls.Add(gaussianPictureBox);
+            gaussianGroupBox.Location = new Point(327, 16);
+            gaussianGroupBox.Margin = new Padding(3, 4, 3, 4);
+            gaussianGroupBox.Name = "gaussianGroupBox";
+            gaussianGroupBox.Padding = new Padding(3, 4, 3, 4);
+            gaussianGroupBox.Size = new Size(306, 379);
+            gaussianGroupBox.TabIndex = 1;
+            gaussianGroupBox.TabStop = false;
+            gaussianGroupBox.Text = "Gaussian Filtered Image";
             // 
             // gaussianPictureBox
             // 
-            this.gaussianPictureBox.Location = new System.Drawing.Point(6, 22);
-            this.gaussianPictureBox.Name = "gaussianPictureBox";
-            this.gaussianPictureBox.Size = new System.Drawing.Size(256, 256);
-            this.gaussianPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gaussianPictureBox.TabIndex = 0;
-            this.gaussianPictureBox.TabStop = false;
+            gaussianPictureBox.Location = new Point(7, 29);
+            gaussianPictureBox.Margin = new Padding(3, 4, 3, 4);
+            gaussianPictureBox.Name = "gaussianPictureBox";
+            gaussianPictureBox.Size = new Size(293, 341);
+            gaussianPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            gaussianPictureBox.TabIndex = 0;
+            gaussianPictureBox.TabStop = false;
             // 
             // highThresholdGroupBox
             // 
-            this.highThresholdGroupBox.Controls.Add(this.highThresholdPictureBox);
-            this.highThresholdGroupBox.Location = new System.Drawing.Point(286, 296);
-            this.highThresholdGroupBox.Name = "highThresholdGroupBox";
-            this.highThresholdGroupBox.Size = new System.Drawing.Size(268, 284);
-            this.highThresholdGroupBox.TabIndex = 2;
-            this.highThresholdGroupBox.TabStop = false;
-            this.highThresholdGroupBox.Text = "Strong Edges";
+            highThresholdGroupBox.Controls.Add(highThresholdPictureBox);
+            highThresholdGroupBox.Location = new Point(327, 395);
+            highThresholdGroupBox.Margin = new Padding(3, 4, 3, 4);
+            highThresholdGroupBox.Name = "highThresholdGroupBox";
+            highThresholdGroupBox.Padding = new Padding(3, 4, 3, 4);
+            highThresholdGroupBox.Size = new Size(306, 379);
+            highThresholdGroupBox.TabIndex = 2;
+            highThresholdGroupBox.TabStop = false;
+            highThresholdGroupBox.Text = "Strong Edges";
             // 
             // highThresholdPictureBox
             // 
-            this.highThresholdPictureBox.Location = new System.Drawing.Point(6, 22);
-            this.highThresholdPictureBox.Name = "highThresholdPictureBox";
-            this.highThresholdPictureBox.Size = new System.Drawing.Size(256, 256);
-            this.highThresholdPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.highThresholdPictureBox.TabIndex = 0;
-            this.highThresholdPictureBox.TabStop = false;
+            highThresholdPictureBox.Location = new Point(7, 29);
+            highThresholdPictureBox.Margin = new Padding(3, 4, 3, 4);
+            highThresholdPictureBox.Name = "highThresholdPictureBox";
+            highThresholdPictureBox.Size = new Size(293, 341);
+            highThresholdPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            highThresholdPictureBox.TabIndex = 0;
+            highThresholdPictureBox.TabStop = false;
             // 
             // lowThresholdGroupBox
             // 
-            this.lowThresholdGroupBox.Controls.Add(this.lowThresholdPictureBox);
-            this.lowThresholdGroupBox.Location = new System.Drawing.Point(560, 296);
-            this.lowThresholdGroupBox.Name = "lowThresholdGroupBox";
-            this.lowThresholdGroupBox.Size = new System.Drawing.Size(268, 284);
-            this.lowThresholdGroupBox.TabIndex = 2;
-            this.lowThresholdGroupBox.TabStop = false;
-            this.lowThresholdGroupBox.Text = "Weak Edges";
+            lowThresholdGroupBox.Controls.Add(lowThresholdPictureBox);
+            lowThresholdGroupBox.Location = new Point(640, 395);
+            lowThresholdGroupBox.Margin = new Padding(3, 4, 3, 4);
+            lowThresholdGroupBox.Name = "lowThresholdGroupBox";
+            lowThresholdGroupBox.Padding = new Padding(3, 4, 3, 4);
+            lowThresholdGroupBox.Size = new Size(306, 379);
+            lowThresholdGroupBox.TabIndex = 2;
+            lowThresholdGroupBox.TabStop = false;
+            lowThresholdGroupBox.Text = "Weak Edges";
             // 
             // lowThresholdPictureBox
             // 
-            this.lowThresholdPictureBox.Location = new System.Drawing.Point(6, 22);
-            this.lowThresholdPictureBox.Name = "lowThresholdPictureBox";
-            this.lowThresholdPictureBox.Size = new System.Drawing.Size(256, 256);
-            this.lowThresholdPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lowThresholdPictureBox.TabIndex = 0;
-            this.lowThresholdPictureBox.TabStop = false;
+            lowThresholdPictureBox.Location = new Point(7, 29);
+            lowThresholdPictureBox.Margin = new Padding(3, 4, 3, 4);
+            lowThresholdPictureBox.Name = "lowThresholdPictureBox";
+            lowThresholdPictureBox.Size = new Size(293, 341);
+            lowThresholdPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            lowThresholdPictureBox.TabIndex = 0;
+            lowThresholdPictureBox.TabStop = false;
             // 
             // SelectImageButton
             // 
-            this.SelectImageButton.Location = new System.Drawing.Point(252, 581);
-            this.SelectImageButton.Name = "SelectImageButton";
-            this.SelectImageButton.Size = new System.Drawing.Size(100, 25);
-            this.SelectImageButton.TabIndex = 4;
-            this.SelectImageButton.Text = "Select Image";
-            this.SelectImageButton.UseVisualStyleBackColor = true;
-            this.SelectImageButton.Click += new System.EventHandler(this.SelectImageButton_Click);
+            SelectImageButton.Location = new Point(288, 775);
+            SelectImageButton.Margin = new Padding(3, 4, 3, 4);
+            SelectImageButton.Name = "SelectImageButton";
+            SelectImageButton.Size = new Size(114, 33);
+            SelectImageButton.TabIndex = 4;
+            SelectImageButton.Text = "Select Image";
+            SelectImageButton.UseVisualStyleBackColor = true;
+            SelectImageButton.Click += SelectImageButton_Click;
             // 
             // processImageButton
             // 
-            this.processImageButton.Location = new System.Drawing.Point(358, 581);
-            this.processImageButton.Name = "processImageButton";
-            this.processImageButton.Size = new System.Drawing.Size(100, 25);
-            this.processImageButton.TabIndex = 5;
-            this.processImageButton.Text = "Process Image";
-            this.processImageButton.UseVisualStyleBackColor = true;
-            this.processImageButton.Click += new System.EventHandler(this.ProcessImageButton_Click);
+            processImageButton.Location = new Point(409, 775);
+            processImageButton.Margin = new Padding(3, 4, 3, 4);
+            processImageButton.Name = "processImageButton";
+            processImageButton.Size = new Size(114, 33);
+            processImageButton.TabIndex = 5;
+            processImageButton.Text = "Process Image";
+            processImageButton.UseVisualStyleBackColor = true;
+            processImageButton.Click += ProcessImageButton_Click;
             // 
             // nonMaxGroupBox
             // 
-            this.nonMaxGroupBox.Controls.Add(this.nonMaxPictureBox);
-            this.nonMaxGroupBox.Location = new System.Drawing.Point(12, 296);
-            this.nonMaxGroupBox.Name = "nonMaxGroupBox";
-            this.nonMaxGroupBox.Size = new System.Drawing.Size(268, 284);
-            this.nonMaxGroupBox.TabIndex = 3;
-            this.nonMaxGroupBox.TabStop = false;
-            this.nonMaxGroupBox.Text = "Non Max Suppressed Image";
+            nonMaxGroupBox.Controls.Add(nonMaxPictureBox);
+            nonMaxGroupBox.Location = new Point(14, 395);
+            nonMaxGroupBox.Margin = new Padding(3, 4, 3, 4);
+            nonMaxGroupBox.Name = "nonMaxGroupBox";
+            nonMaxGroupBox.Padding = new Padding(3, 4, 3, 4);
+            nonMaxGroupBox.Size = new Size(306, 379);
+            nonMaxGroupBox.TabIndex = 3;
+            nonMaxGroupBox.TabStop = false;
+            nonMaxGroupBox.Text = "Non Max Suppressed Image";
             // 
             // nonMaxPictureBox
             // 
-            this.nonMaxPictureBox.Location = new System.Drawing.Point(6, 22);
-            this.nonMaxPictureBox.Name = "nonMaxPictureBox";
-            this.nonMaxPictureBox.Size = new System.Drawing.Size(256, 256);
-            this.nonMaxPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.nonMaxPictureBox.TabIndex = 0;
-            this.nonMaxPictureBox.TabStop = false;
+            nonMaxPictureBox.Location = new Point(7, 29);
+            nonMaxPictureBox.Margin = new Padding(3, 4, 3, 4);
+            nonMaxPictureBox.Name = "nonMaxPictureBox";
+            nonMaxPictureBox.Size = new Size(293, 341);
+            nonMaxPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            nonMaxPictureBox.TabIndex = 0;
+            nonMaxPictureBox.TabStop = false;
             // 
             // finalGroupBox
             // 
-            this.finalGroupBox.Controls.Add(this.finalPictureBox);
-            this.finalGroupBox.Location = new System.Drawing.Point(834, 12);
-            this.finalGroupBox.Name = "finalGroupBox";
-            this.finalGroupBox.Size = new System.Drawing.Size(552, 568);
-            this.finalGroupBox.TabIndex = 3;
-            this.finalGroupBox.TabStop = false;
-            this.finalGroupBox.Text = "Final Image";
+            finalGroupBox.Controls.Add(finalPictureBox);
+            finalGroupBox.Location = new Point(953, 16);
+            finalGroupBox.Margin = new Padding(3, 4, 3, 4);
+            finalGroupBox.Name = "finalGroupBox";
+            finalGroupBox.Padding = new Padding(3, 4, 3, 4);
+            finalGroupBox.Size = new Size(631, 757);
+            finalGroupBox.TabIndex = 3;
+            finalGroupBox.TabStop = false;
+            finalGroupBox.Text = "Final Image";
             // 
             // finalPictureBox
             // 
-            this.finalPictureBox.Location = new System.Drawing.Point(0, 22);
-            this.finalPictureBox.Name = "finalPictureBox";
-            this.finalPictureBox.Size = new System.Drawing.Size(546, 540);
-            this.finalPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.finalPictureBox.TabIndex = 0;
-            this.finalPictureBox.TabStop = false;
+            finalPictureBox.Location = new Point(0, 29);
+            finalPictureBox.Margin = new Padding(3, 4, 3, 4);
+            finalPictureBox.Name = "finalPictureBox";
+            finalPictureBox.Size = new Size(624, 720);
+            finalPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            finalPictureBox.TabIndex = 0;
+            finalPictureBox.TabStop = false;
             // 
             // sobelGroupBox
             // 
-            this.sobelGroupBox.Controls.Add(this.gradientPictureBox);
-            this.sobelGroupBox.Location = new System.Drawing.Point(560, 12);
-            this.sobelGroupBox.Name = "sobelGroupBox";
-            this.sobelGroupBox.Size = new System.Drawing.Size(268, 284);
-            this.sobelGroupBox.TabIndex = 3;
-            this.sobelGroupBox.TabStop = false;
-            this.sobelGroupBox.Text = "Gradient of the Image";
+            sobelGroupBox.Controls.Add(gradientPictureBox);
+            sobelGroupBox.Location = new Point(640, 16);
+            sobelGroupBox.Margin = new Padding(3, 4, 3, 4);
+            sobelGroupBox.Name = "sobelGroupBox";
+            sobelGroupBox.Padding = new Padding(3, 4, 3, 4);
+            sobelGroupBox.Size = new Size(306, 379);
+            sobelGroupBox.TabIndex = 3;
+            sobelGroupBox.TabStop = false;
+            sobelGroupBox.Text = "Gradient of the Image";
             // 
             // gradientPictureBox
             // 
-            this.gradientPictureBox.Location = new System.Drawing.Point(6, 22);
-            this.gradientPictureBox.Name = "gradientPictureBox";
-            this.gradientPictureBox.Size = new System.Drawing.Size(256, 256);
-            this.gradientPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gradientPictureBox.TabIndex = 0;
-            this.gradientPictureBox.TabStop = false;
+            gradientPictureBox.Location = new Point(7, 29);
+            gradientPictureBox.Margin = new Padding(3, 4, 3, 4);
+            gradientPictureBox.Name = "gradientPictureBox";
+            gradientPictureBox.Size = new Size(293, 341);
+            gradientPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            gradientPictureBox.TabIndex = 0;
+            gradientPictureBox.TabStop = false;
             // 
             // highThresholdTextBox
             // 
-            this.highThresholdTextBox.Location = new System.Drawing.Point(106, 583);
-            this.highThresholdTextBox.Name = "highThresholdTextBox";
-            this.highThresholdTextBox.Size = new System.Drawing.Size(40, 23);
-            this.highThresholdTextBox.TabIndex = 7;
-            this.highThresholdTextBox.Text = "25";
+            highThresholdTextBox.Location = new Point(121, 777);
+            highThresholdTextBox.Margin = new Padding(3, 4, 3, 4);
+            highThresholdTextBox.Name = "highThresholdTextBox";
+            highThresholdTextBox.Size = new Size(45, 27);
+            highThresholdTextBox.TabIndex = 7;
+            highThresholdTextBox.Text = "25";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 586);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "High Threshold";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.AutoSize = true;
+            label1.Location = new Point(14, 781);
+            label1.Name = "label1";
+            label1.Size = new Size(110, 20);
+            label1.TabIndex = 8;
+            label1.Text = "High Threshold";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 615);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 15);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Low Threshold";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.AutoSize = true;
+            label2.Location = new Point(14, 820);
+            label2.Name = "label2";
+            label2.Size = new Size(105, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Low Threshold";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lowThresholdTextBox
             // 
-            this.lowThresholdTextBox.Location = new System.Drawing.Point(106, 612);
-            this.lowThresholdTextBox.Name = "lowThresholdTextBox";
-            this.lowThresholdTextBox.Size = new System.Drawing.Size(40, 23);
-            this.lowThresholdTextBox.TabIndex = 9;
-            this.lowThresholdTextBox.Text = "15";
-            this.lowThresholdTextBox.UseWaitCursor = true;
+            lowThresholdTextBox.Location = new Point(121, 816);
+            lowThresholdTextBox.Margin = new Padding(3, 4, 3, 4);
+            lowThresholdTextBox.Name = "lowThresholdTextBox";
+            lowThresholdTextBox.Size = new Size(45, 27);
+            lowThresholdTextBox.TabIndex = 9;
+            lowThresholdTextBox.Text = "15";
+            lowThresholdTextBox.UseWaitCursor = true;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(152, 586);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 15);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Threads";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label3.AutoSize = true;
+            label3.Location = new Point(174, 781);
+            label3.Name = "label3";
+            label3.Size = new Size(61, 20);
+            label3.TabIndex = 12;
+            label3.Text = "Threads";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // threadsTextBox
             // 
-            this.threadsTextBox.Location = new System.Drawing.Point(206, 583);
-            this.threadsTextBox.Name = "threadsTextBox";
-            this.threadsTextBox.Size = new System.Drawing.Size(40, 23);
-            this.threadsTextBox.TabIndex = 11;
-            this.threadsTextBox.Text = "1";
+            threadsTextBox.Location = new Point(235, 777);
+            threadsTextBox.Margin = new Padding(3, 4, 3, 4);
+            threadsTextBox.Name = "threadsTextBox";
+            threadsTextBox.Size = new Size(45, 27);
+            threadsTextBox.TabIndex = 11;
+            threadsTextBox.Text = "1";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1060, 615);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Completion Time";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.AutoSize = true;
+            label4.Location = new Point(1211, 820);
+            label4.Name = "label4";
+            label4.Size = new Size(124, 20);
+            label4.TabIndex = 13;
+            label4.Text = "Completion Time";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // completionTimeLabel
             // 
-            this.completionTimeLabel.AutoSize = true;
-            this.completionTimeLabel.Location = new System.Drawing.Point(1176, 615);
-            this.completionTimeLabel.Name = "completionTimeLabel";
-            this.completionTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.completionTimeLabel.TabIndex = 14;
-            this.completionTimeLabel.Text = "Miliseconds";
+            completionTimeLabel.AutoSize = true;
+            completionTimeLabel.Location = new Point(1344, 820);
+            completionTimeLabel.Name = "completionTimeLabel";
+            completionTimeLabel.Size = new Size(87, 20);
+            completionTimeLabel.TabIndex = 14;
+            completionTimeLabel.Text = "Miliseconds";
             // 
             // gaussianTimeLabel
             // 
-            this.gaussianTimeLabel.AutoSize = true;
-            this.gaussianTimeLabel.Location = new System.Drawing.Point(772, 586);
-            this.gaussianTimeLabel.Name = "gaussianTimeLabel";
-            this.gaussianTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.gaussianTimeLabel.TabIndex = 16;
-            this.gaussianTimeLabel.Text = "Miliseconds";
+            gaussianTimeLabel.AutoSize = true;
+            gaussianTimeLabel.Location = new Point(882, 781);
+            gaussianTimeLabel.Name = "gaussianTimeLabel";
+            gaussianTimeLabel.Size = new Size(87, 20);
+            gaussianTimeLabel.TabIndex = 16;
+            gaussianTimeLabel.Text = "Miliseconds";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(681, 586);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 15);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Gaussian Time";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label6.AutoSize = true;
+            label6.Location = new Point(778, 781);
+            label6.Name = "label6";
+            label6.Size = new Size(104, 20);
+            label6.TabIndex = 15;
+            label6.Text = "Gaussian Time";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // filtersTimeLabel
             // 
-            this.filtersTimeLabel.AutoSize = true;
-            this.filtersTimeLabel.Location = new System.Drawing.Point(772, 615);
-            this.filtersTimeLabel.Name = "filtersTimeLabel";
-            this.filtersTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.filtersTimeLabel.TabIndex = 18;
-            this.filtersTimeLabel.Text = "Miliseconds";
+            filtersTimeLabel.AutoSize = true;
+            filtersTimeLabel.Location = new Point(882, 820);
+            filtersTimeLabel.Name = "filtersTimeLabel";
+            filtersTimeLabel.Size = new Size(87, 20);
+            filtersTimeLabel.TabIndex = 18;
+            filtersTimeLabel.Text = "Miliseconds";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(681, 615);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Filters Time";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label7.AutoSize = true;
+            label7.Location = new Point(778, 820);
+            label7.Name = "label7";
+            label7.Size = new Size(85, 20);
+            label7.TabIndex = 17;
+            label7.Text = "Filters Time";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // gradientTimeLabel
             // 
-            this.gradientTimeLabel.AutoSize = true;
-            this.gradientTimeLabel.Location = new System.Drawing.Point(772, 644);
-            this.gradientTimeLabel.Name = "gradientTimeLabel";
-            this.gradientTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.gradientTimeLabel.TabIndex = 20;
-            this.gradientTimeLabel.Text = "Miliseconds";
+            gradientTimeLabel.AutoSize = true;
+            gradientTimeLabel.Location = new Point(882, 859);
+            gradientTimeLabel.Name = "gradientTimeLabel";
+            gradientTimeLabel.Size = new Size(87, 20);
+            gradientTimeLabel.TabIndex = 20;
+            gradientTimeLabel.Text = "Miliseconds";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(683, 645);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 15);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Gradient Time";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label8.AutoSize = true;
+            label8.Location = new Point(781, 860);
+            label8.Name = "label8";
+            label8.Size = new Size(103, 20);
+            label8.TabIndex = 19;
+            label8.Text = "Gradient Time";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // nonMaxTimeLabel
             // 
-            this.nonMaxTimeLabel.AutoSize = true;
-            this.nonMaxTimeLabel.Location = new System.Drawing.Point(965, 586);
-            this.nonMaxTimeLabel.Name = "nonMaxTimeLabel";
-            this.nonMaxTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.nonMaxTimeLabel.TabIndex = 22;
-            this.nonMaxTimeLabel.Text = "Miliseconds";
+            nonMaxTimeLabel.AutoSize = true;
+            nonMaxTimeLabel.Location = new Point(1103, 781);
+            nonMaxTimeLabel.Name = "nonMaxTimeLabel";
+            nonMaxTimeLabel.Size = new Size(87, 20);
+            nonMaxTimeLabel.TabIndex = 22;
+            nonMaxTimeLabel.Text = "Miliseconds";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(877, 586);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 15);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "NonMax Time";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label9.AutoSize = true;
+            label9.Location = new Point(1002, 781);
+            label9.Name = "label9";
+            label9.Size = new Size(102, 20);
+            label9.TabIndex = 21;
+            label9.Text = "NonMax Time";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // doubleTTimeLabel
             // 
-            this.doubleTTimeLabel.AutoSize = true;
-            this.doubleTTimeLabel.Location = new System.Drawing.Point(965, 615);
-            this.doubleTTimeLabel.Name = "doubleTTimeLabel";
-            this.doubleTTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.doubleTTimeLabel.TabIndex = 24;
-            this.doubleTTimeLabel.Text = "Miliseconds";
+            doubleTTimeLabel.AutoSize = true;
+            doubleTTimeLabel.Location = new Point(1103, 820);
+            doubleTTimeLabel.Name = "doubleTTimeLabel";
+            doubleTTimeLabel.Size = new Size(87, 20);
+            doubleTTimeLabel.TabIndex = 24;
+            doubleTTimeLabel.Text = "Miliseconds";
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(877, 615);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 15);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "DoubleT Time";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label10.AutoSize = true;
+            label10.Location = new Point(1002, 820);
+            label10.Name = "label10";
+            label10.Size = new Size(103, 20);
+            label10.TabIndex = 23;
+            label10.Text = "DoubleT Time";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // hysterisisTimeLabel
             // 
-            this.hysterisisTimeLabel.AutoSize = true;
-            this.hysterisisTimeLabel.Location = new System.Drawing.Point(965, 645);
-            this.hysterisisTimeLabel.Name = "hysterisisTimeLabel";
-            this.hysterisisTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.hysterisisTimeLabel.TabIndex = 26;
-            this.hysterisisTimeLabel.Text = "Miliseconds";
+            hysterisisTimeLabel.AutoSize = true;
+            hysterisisTimeLabel.Location = new Point(1103, 860);
+            hysterisisTimeLabel.Name = "hysterisisTimeLabel";
+            hysterisisTimeLabel.Size = new Size(87, 20);
+            hysterisisTimeLabel.TabIndex = 26;
+            hysterisisTimeLabel.Text = "Miliseconds";
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(877, 645);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 15);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Hysterisis Time";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label11.AutoSize = true;
+            label11.Location = new Point(1002, 860);
+            label11.Name = "label11";
+            label11.Size = new Size(108, 20);
+            label11.TabIndex = 25;
+            label11.Text = "Hysterisis Time";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // normalizeTimeLabel
             // 
-            this.normalizeTimeLabel.AutoSize = true;
-            this.normalizeTimeLabel.Location = new System.Drawing.Point(1176, 586);
-            this.normalizeTimeLabel.Name = "normalizeTimeLabel";
-            this.normalizeTimeLabel.Size = new System.Drawing.Size(70, 15);
-            this.normalizeTimeLabel.TabIndex = 28;
-            this.normalizeTimeLabel.Text = "Miliseconds";
+            normalizeTimeLabel.AutoSize = true;
+            normalizeTimeLabel.Location = new Point(1344, 781);
+            normalizeTimeLabel.Name = "normalizeTimeLabel";
+            normalizeTimeLabel.Size = new Size(87, 20);
+            normalizeTimeLabel.TabIndex = 28;
+            normalizeTimeLabel.Text = "Miliseconds";
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1060, 586);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 15);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Normalize Time";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label12.AutoSize = true;
+            label12.Location = new Point(1211, 781);
+            label12.Name = "label12";
+            label12.Size = new Size(115, 20);
+            label12.TabIndex = 27;
+            label12.Text = "Normalize Time";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(570, 581);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(100, 25);
-            this.saveButton.TabIndex = 29;
-            this.saveButton.Text = "Save Image";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            saveButton.Location = new Point(651, 775);
+            saveButton.Margin = new Padding(3, 4, 3, 4);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(114, 33);
+            saveButton.TabIndex = 29;
+            saveButton.Text = "Save Image";
+            saveButton.UseVisualStyleBackColor = true;
+            saveButton.Click += SaveButton_Click;
             // 
             // useAssembly
             // 
-            this.useAssembly.AutoSize = true;
-            this.useAssembly.Checked = true;
-            this.useAssembly.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.useAssembly.Location = new System.Drawing.Point(304, 614);
-            this.useAssembly.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.useAssembly.Name = "useAssembly";
-            this.useAssembly.Size = new System.Drawing.Size(130, 19);
-            this.useAssembly.TabIndex = 30;
-            this.useAssembly.Text = "Use Assembly Code";
-            this.useAssembly.UseVisualStyleBackColor = true;
+            useAssembly.AutoSize = true;
+            useAssembly.Checked = true;
+            useAssembly.CheckState = CheckState.Checked;
+            useAssembly.Location = new Point(362, 818);
+            useAssembly.Name = "useAssembly";
+            useAssembly.Size = new Size(161, 24);
+            useAssembly.TabIndex = 30;
+            useAssembly.Text = "Use Assembly Code";
+            useAssembly.UseVisualStyleBackColor = true;
             // 
             // autoThreshold
             // 
-            this.autoThreshold.AutoSize = true;
-            this.autoThreshold.Location = new System.Drawing.Point(155, 614);
-            this.autoThreshold.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.autoThreshold.Name = "autoThreshold";
-            this.autoThreshold.Size = new System.Drawing.Size(143, 19);
-            this.autoThreshold.TabIndex = 31;
-            this.autoThreshold.Text = "Auto Threshold Values";
-            this.autoThreshold.UseVisualStyleBackColor = true;
+            autoThreshold.AutoSize = true;
+            autoThreshold.Location = new Point(177, 819);
+            autoThreshold.Name = "autoThreshold";
+            autoThreshold.Size = new Size(178, 24);
+            autoThreshold.TabIndex = 31;
+            autoThreshold.Text = "Auto Threshold Values";
+            autoThreshold.UseVisualStyleBackColor = true;
             // 
             // multipleProcessButton
             // 
-            this.multipleProcessButton.Location = new System.Drawing.Point(464, 581);
-            this.multipleProcessButton.Name = "multipleProcessButton";
-            this.multipleProcessButton.Size = new System.Drawing.Size(100, 25);
-            this.multipleProcessButton.TabIndex = 32;
-            this.multipleProcessButton.Text = "Process 10X";
-            this.multipleProcessButton.UseVisualStyleBackColor = true;
-            this.multipleProcessButton.Click += new System.EventHandler(this.MultipleProcessButton_Click);
+            multipleProcessButton.Location = new Point(530, 775);
+            multipleProcessButton.Margin = new Padding(3, 4, 3, 4);
+            multipleProcessButton.Name = "multipleProcessButton";
+            multipleProcessButton.Size = new Size(114, 33);
+            multipleProcessButton.TabIndex = 32;
+            multipleProcessButton.Text = "Process 10X";
+            multipleProcessButton.UseVisualStyleBackColor = true;
+            multipleProcessButton.Click += MultipleProcessButton_Click;
             // 
             // avgDllTimeLabel
             // 
-            this.avgDllTimeLabel.AutoSize = true;
-            this.avgDllTimeLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.avgDllTimeLabel.Location = new System.Drawing.Point(214, 638);
-            this.avgDllTimeLabel.Name = "avgDllTimeLabel";
-            this.avgDllTimeLabel.Size = new System.Drawing.Size(129, 30);
-            this.avgDllTimeLabel.TabIndex = 34;
-            this.avgDllTimeLabel.Text = "Miliseconds";
+            avgDllTimeLabel.AutoSize = true;
+            avgDllTimeLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            avgDllTimeLabel.Location = new Point(245, 851);
+            avgDllTimeLabel.Name = "avgDllTimeLabel";
+            avgDllTimeLabel.Size = new Size(169, 37);
+            avgDllTimeLabel.TabIndex = 34;
+            avgDllTimeLabel.Text = "Miliseconds";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(12, 638);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(196, 30);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Average DLL Time:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(14, 851);
+            label13.Name = "label13";
+            label13.Size = new Size(256, 37);
+            label13.TabIndex = 33;
+            label13.Text = "Average DLL Time:";
+            label13.TextAlign = ContentAlignment.MiddleRight;
             // 
             // timesExecutedLabel
             // 
-            this.timesExecutedLabel.AutoSize = true;
-            this.timesExecutedLabel.Location = new System.Drawing.Point(1176, 644);
-            this.timesExecutedLabel.Name = "timesExecutedLabel";
-            this.timesExecutedLabel.Size = new System.Drawing.Size(13, 15);
-            this.timesExecutedLabel.TabIndex = 36;
-            this.timesExecutedLabel.Text = "0";
+            timesExecutedLabel.AutoSize = true;
+            timesExecutedLabel.Location = new Point(1344, 859);
+            timesExecutedLabel.Name = "timesExecutedLabel";
+            timesExecutedLabel.Size = new Size(17, 20);
+            timesExecutedLabel.TabIndex = 36;
+            timesExecutedLabel.Text = "0";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1060, 644);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 15);
-            this.label14.TabIndex = 35;
-            this.label14.Text = "Times Executed";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label14.AutoSize = true;
+            label14.Location = new Point(1211, 859);
+            label14.Name = "label14";
+            label14.Size = new Size(112, 20);
+            label14.TabIndex = 35;
+            label14.Text = "Times Executed";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // AppForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 677);
-            this.Controls.Add(this.timesExecutedLabel);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.avgDllTimeLabel);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.multipleProcessButton);
-            this.Controls.Add(this.autoThreshold);
-            this.Controls.Add(this.useAssembly);
-            this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.normalizeTimeLabel);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.hysterisisTimeLabel);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.doubleTTimeLabel);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.nonMaxTimeLabel);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.gradientTimeLabel);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.filtersTimeLabel);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.gaussianTimeLabel);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.completionTimeLabel);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.threadsTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lowThresholdTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.highThresholdTextBox);
-            this.Controls.Add(this.sobelGroupBox);
-            this.Controls.Add(this.finalGroupBox);
-            this.Controls.Add(this.nonMaxGroupBox);
-            this.Controls.Add(this.processImageButton);
-            this.Controls.Add(this.SelectImageButton);
-            this.Controls.Add(this.lowThresholdGroupBox);
-            this.Controls.Add(this.highThresholdGroupBox);
-            this.Controls.Add(this.gaussianGroupBox);
-            this.Controls.Add(this.inputGroupBox);
-            this.Name = "AppForm";
-            this.Text = "AppForm";
-            this.inputGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.inputPictureBox)).EndInit();
-            this.gaussianGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gaussianPictureBox)).EndInit();
-            this.highThresholdGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.highThresholdPictureBox)).EndInit();
-            this.lowThresholdGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lowThresholdPictureBox)).EndInit();
-            this.nonMaxGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nonMaxPictureBox)).EndInit();
-            this.finalGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.finalPictureBox)).EndInit();
-            this.sobelGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gradientPictureBox)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1600, 903);
+            Controls.Add(timesExecutedLabel);
+            Controls.Add(label14);
+            Controls.Add(avgDllTimeLabel);
+            Controls.Add(label13);
+            Controls.Add(multipleProcessButton);
+            Controls.Add(autoThreshold);
+            Controls.Add(useAssembly);
+            Controls.Add(saveButton);
+            Controls.Add(normalizeTimeLabel);
+            Controls.Add(label12);
+            Controls.Add(hysterisisTimeLabel);
+            Controls.Add(label11);
+            Controls.Add(doubleTTimeLabel);
+            Controls.Add(label10);
+            Controls.Add(nonMaxTimeLabel);
+            Controls.Add(label9);
+            Controls.Add(gradientTimeLabel);
+            Controls.Add(label8);
+            Controls.Add(filtersTimeLabel);
+            Controls.Add(label7);
+            Controls.Add(gaussianTimeLabel);
+            Controls.Add(label6);
+            Controls.Add(completionTimeLabel);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(threadsTextBox);
+            Controls.Add(label2);
+            Controls.Add(lowThresholdTextBox);
+            Controls.Add(label1);
+            Controls.Add(highThresholdTextBox);
+            Controls.Add(sobelGroupBox);
+            Controls.Add(finalGroupBox);
+            Controls.Add(nonMaxGroupBox);
+            Controls.Add(processImageButton);
+            Controls.Add(SelectImageButton);
+            Controls.Add(lowThresholdGroupBox);
+            Controls.Add(highThresholdGroupBox);
+            Controls.Add(gaussianGroupBox);
+            Controls.Add(inputGroupBox);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "AppForm";
+            Text = "AppForm";
+            inputGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)inputPictureBox).EndInit();
+            gaussianGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gaussianPictureBox).EndInit();
+            highThresholdGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)highThresholdPictureBox).EndInit();
+            lowThresholdGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)lowThresholdPictureBox).EndInit();
+            nonMaxGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)nonMaxPictureBox).EndInit();
+            finalGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)finalPictureBox).EndInit();
+            sobelGroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gradientPictureBox).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
