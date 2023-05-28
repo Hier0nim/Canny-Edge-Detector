@@ -32,7 +32,7 @@ namespace Canny_Edge_Detector
 
 #else
 
-                    //RELEASE VERSION
+        //RELEASE VERSION
         // 3x3 Filter apply MASM64 DLL import
         [DllImport(@"..\..\..\..\x64\Release\JAAsm.dll")]
         static extern void Calculate3x3(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
