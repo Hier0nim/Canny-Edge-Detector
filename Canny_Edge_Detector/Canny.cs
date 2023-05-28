@@ -15,6 +15,7 @@ namespace Canny_Edge_Detector
     /// </summary>
     class Canny
     {
+        //RELEASE VERSION
         // 3x3 Filter apply MASM64 DLL import
         [DllImport(@"..\..\..\..\x64\Release\JAAsm.dll")]
         static extern void Calculate3x3(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
@@ -26,6 +27,21 @@ namespace Canny_Edge_Detector
         // Gaussian filter MASM64 DLL import
         [DllImport(@"..\..\..\..\x64\Release\JAAsm.dll")]
         static extern void Gaussian(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size, int weight);
+
+        ////DEBUG VERSION
+        //// 3x3 Filter apply MASM64 DLL import
+        //[DllImport(@"..\..\..\..\x64\Debug\JAAsm.dll")]
+        //static extern void Calculate3x3(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
+
+        //// // 3x3 Filter apply C++ DLL import
+        //[DllImport(@"..\..\..\..\x64\Debug\JACpp.dll")]
+        //static extern void Calculate3x3Cpp(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size);
+
+        //// Gaussian filter MASM64 DLL import
+        //[DllImport(@"..\..\..\..\x64\Debug\JAAsm.dll")]
+        //static extern void Gaussian(IntPtr inputArray, IntPtr filter, IntPtr resultArray, int size, int weight);
+
+
 
         // Variable wchich value decides if the assembly code is used
         private readonly bool useAsseblyCode;
