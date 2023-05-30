@@ -19,13 +19,7 @@ extern "C" {
 			for (j = 0; j < 3; j++)
 			{
 				sum += ((int*)inputArray)[i + j - size] * ((int*)filter)[j];		// Apllying filter to row above and counting sum
-			}
-			for (j = 0; j < 3; j++)
-			{
 				sum += ((int*)inputArray)[i + j] * ((int*)filter)[j + 4];			// Apllying filter to middle row and counting sum
-			}
-			for (j = 0; j < 3; j++)
-			{
 				sum += ((int*)inputArray)[i + j + size] * ((int*)filter)[j + 8];	// Apllying filter to row below and counting sum
 			}
 			((int*)resultArray)[i + 1] = sum;		// Insertion of the sum into adress from resultArray shifted by 1
