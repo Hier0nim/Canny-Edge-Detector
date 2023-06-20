@@ -5,7 +5,5 @@ Implementation of Canny Edge detector in C# with libraries in C++ and MASM to co
 **Instructions**
 - Open solution
 - Build solution
-- Select version of project:
- - If you want to debug code in C#, Assembly language or C++ select Debug.
- - Else select Relese
+- Select version of project
 - Run the project
