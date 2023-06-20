@@ -5,5 +5,4 @@ Implementation of Canny Edge detector in C# with libraries in C++ and MASM to co
 **Instructions**
 - Open solution
 - Build solution
-- Select version of project
 - Run the project
